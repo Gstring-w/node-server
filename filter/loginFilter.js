@@ -1,5 +1,5 @@
 const filter = [];
 
-function loginFilter(res,req){
+function loginFilter(res,req,next){
     
-}
+}   

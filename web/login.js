@@ -1,20 +1,29 @@
 const login = require("../server/login");
 const md5hash = require("./md5");
+const token = require("./JWT");
 function loginWeb(req, res) {
   function dealData(error, data) {
-    var header = {
-      "Set-Cookie": "user_id=11"
-    };
     if (!error) {
-      res.set(header);
-      res.send(data);
-      res.end();
+      if (data.length != 0) {
+        // var header = {
+        //   "Set-Cookie": `user_id=${token(data[0].username)}`
+        // };
+        // res.set(header);
+        // res.send(data);
+        res.json({
+          token: token(data[0].username)
+        });
+        res.end();
+      } else {
+        res.send("password error");
+        res.end();
+      }
     }
   }
+  //test username:root password:123
 
-  const { userName, password } = req.body;
-  password = md5hash(password);
-  let params = [userName, password];
+  const { username, password } = req.body;
+  let params = [username, md5hash(password)];
   login(params, dealData);
 }
 
