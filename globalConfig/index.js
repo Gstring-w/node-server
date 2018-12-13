@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const config = fs.readFileSync("./server.conf").toString();
+const config = fs.readFileSync(__dirname + "/../server.conf").toString();
 
 let globalConfig = {};
 
