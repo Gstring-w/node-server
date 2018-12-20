@@ -1,7 +1,7 @@
 const queryArgs = require("../dao/dbutils");
 
 function login(params, cb) {
-  const sql = "SELECT * from article where LIMIT (?,?) ";
+  const sql = "SELECT * from article LIMIT ?,? ";
   queryArgs(sql, params, cb);
 }
 
