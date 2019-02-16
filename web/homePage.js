@@ -5,7 +5,7 @@
 // const Route =require('../../../client/blog_web/src/route');
 import React from "react";
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
-import Route from "../client/blog_web/src/route";
+import Route from "../page/src/route";
 
 
 function homePage(req, res) {

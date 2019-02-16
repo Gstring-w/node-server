@@ -1,0 +1,20 @@
+.rightContent {
+  z-index: 1;
+  width: 80%;
+  flex-shrink: 80%;
+  &-content {
+    margin-top: 30px;
+    width: 80%;
+    margin-left: 8vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rightContent {
+    width: 100%;
+  }
+
+  .rightContent-content {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
