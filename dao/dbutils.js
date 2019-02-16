@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const configMysql = require("./mysqlConfig");
+const configMysql = require("./mysqlConfig.conf");
 const pool = mysql.createPool(configMysql);
 
 function queryArgs(sql, args, callback) {
